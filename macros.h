@@ -36,7 +36,7 @@ extern "C" {
 
 /* Define the inline directive when available */
 #if defined( __GNUC__ )&& !defined( __cplusplus )
-#define INLINE __inline__
+#define INLINE
 #else
 #define INLINE
 #endif
