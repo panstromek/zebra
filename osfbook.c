@@ -750,7 +750,7 @@ minimax_tree( void ) {
 #endif
 }
 
-
+// #ifdef INCLUDE_BOOKTOOL
 #ifdef INCLUDE_BOOKTOOL
 
 /*
@@ -1192,6 +1192,7 @@ generate_endgame_statistics( int max_depth, double probability,
 
 
 #endif
+// #endif INCLUDE_BOOKTOOL
 
 
 
@@ -1572,6 +1573,7 @@ validate_tree( void ) {
 }
 
 
+// #ifdef INCLUDE_BOOKTOOL
 #ifdef INCLUDE_BOOKTOOL
 
 
@@ -1990,6 +1992,7 @@ export_tree( const char *file_name ) {
 
 
 #endif
+// #endif INCLUDE_BOOKTOOL
 
 
 
