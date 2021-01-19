@@ -609,8 +609,13 @@ main( int argc, char *argv[] ) {
   global_setup( use_random, hash_bits );
   init_thor_database();
 
-  if ( use_book )
-    init_learn( "book.bin", TRUE );
+  if ( use_book ) {
+      char *book_filename = getenv("BOOK_PATH");
+      if (book_filename == NULL) {
+          book_filename = "book.bin";
+      }
+      init_learn(book_filename, TRUE );
+  }
   if ( use_random && !SCRIPT_ONLY ) {
     time( &timer );
     my_srandom( timer );

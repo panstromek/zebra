@@ -936,8 +936,9 @@ init_coeffs( void ) {
   getcwd(sPatternFile, sizeof(sPatternFile));
   strcat(sPatternFile, "/" PATTERN_FILE);
 #endif
+  char* env_coeffs = getenv("COEFFS_PATH");
 
-  coeff_stream = gzopen( sPatternFile, "rb" );
+  coeff_stream = gzopen(env_coeffs ? env_coeffs : sPatternFile, "rb" );
   if ( coeff_stream == NULL )
     fatal_error( "%s '%s'\n", FILE_ERROR, sPatternFile );
 
