@@ -82,7 +82,8 @@ static int do_check_midgame_abort = TRUE;
 static int counter_phase;
 static int apply_perturbation = TRUE;
 static int perturbation_amplitude = 0;
-static int stage_reached[61], stage_score[61];
+static int stage_reached[62] = {};
+static int stage_score[62] ={};
 static int score_perturbation[100];
 static int feas_index_list[64][64];
 
@@ -99,7 +100,7 @@ setup_midgame( void ) {
 
   allow_midgame_hash_probe = TRUE;
   allow_midgame_hash_update = TRUE;
-  for ( i = 0; i <= 60; i++ )
+  for ( i = 0; i <= 61; i++ )
     stage_reached[i] = FALSE;
 
   calculate_perturbation();
