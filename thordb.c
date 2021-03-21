@@ -2522,18 +2522,18 @@ init_move_masks( void ) {
   for ( i = 0; i < 4; i++ )
     for ( j = 0, pos = 10 * i + 11; j < 8; j++, pos++ ) {
       index = 8 * i + j;
-      move_mask_lo[pos] = (1 << index);
+      move_mask_lo[pos] = (((unsigned int)1) << ((unsigned int)index));
       move_mask_hi[pos] = 0;
-      unmove_mask_lo[pos] = ~(1 << index);
+      unmove_mask_lo[pos] = ~(((unsigned int)1) << ((unsigned int)index));
       unmove_mask_hi[pos] = ~0;
     }
   for ( i = 0; i < 4; i++ )
     for ( j = 0, pos = 10 * i + 51; j < 8; j++, pos++ ) {
       index = 8 * i + j;
       move_mask_lo[pos] = 0;
-      move_mask_hi[pos] = (1 << index);
+      move_mask_hi[pos] = (((unsigned int)1) << ((unsigned int)index));
       unmove_mask_lo[pos] = ~0;
-      unmove_mask_hi[pos] = ~(1 << index);
+      unmove_mask_hi[pos] = ~(((unsigned int)1) << ((unsigned int)index));
     }
 }
 
