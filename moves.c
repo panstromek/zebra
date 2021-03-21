@@ -320,7 +320,9 @@ make_move_no_hash( int side_to_move, int move ) {
 INLINE void
 unmake_move( int side_to_move, int move ) {
   board[move] = EMPTY;
-
+  if (disks_played < 1 || disks_played > MAX_SEARCH_DEPTH) {
+      return;
+  }
   disks_played--;
 
   hash1 = hash_stored1[disks_played];
