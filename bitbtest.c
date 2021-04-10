@@ -215,7 +215,7 @@ static const unsigned int high_flip[56] = {
 #define bbFlips_Right_low(pos, mask)	\
   contig = right_contiguous[(opp_bits_low >> (pos + 1)) & mask];	\
   fl = right_flip[contig] << (pos + 1);					\
-  t = -(int)(my_bits_low & fl) >> 31;					\
+  t = ((int)(-(unsigned int)(my_bits_low & fl))) >> 31u;					\
   my_bits_low |= fl & t;						\
   flipped = contig & t
 #endif
@@ -775,7 +775,7 @@ static const unsigned int high_flip[56] = {
     t &= (opp_bits_high >> (pos + vec * 3 - 32));			\
     contig += t;							\
     fl = lsb_mask[contig] & mask;					\
-    t = -(int)(my_bits_high & fl) >> 31;				\
+    t = ((int)(-(unsigned int)(my_bits_high & fl))) >> 31u;					\
     my_bits_high |= fl & t;						\
     flipped += contig & t;						\
   }
