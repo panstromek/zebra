@@ -4048,6 +4048,7 @@ fill_move_alternatives( int side_to_move,
 
     if ( child_feasible && (score == 0) &&
 	 !(node[index].flags & WLD_SOLVED) &&
+         (book_hash_table[slot] != EMPTY_HASH_SLOT) &&
 	 (node[book_hash_table[slot]].flags & WLD_SOLVED) ) {
       /* Check if this is a book draw that should be avoided, i.e., one
          where the current position is not solved but the child position
