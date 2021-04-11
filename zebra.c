@@ -770,7 +770,7 @@ play_game( const char *file_name,
   int col, row;
   int thor_position_count;
   int provided_move[61];
-  char move_vec[121];
+  char move_vec[123];
   char line_buffer[1000];
   time_t timer;
   FILE *log_file;
