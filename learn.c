@@ -26,6 +26,7 @@
 #include "osfbook.h"
 #include "patterns.h"
 #include "search.h"
+#include "error.h"
 #include "timer.h"
 
 
@@ -150,6 +151,9 @@ learn_game( int game_length, int private_game, int save_database ) {
     if ( move_count[disks_played] == 0 ) {
       side_to_move = OPP( side_to_move );
       generate_all( side_to_move );
+    }
+    if (game_move[i] == -1) {
+        fatal_error("Cannot learn game. Missing move no. %d", i);
     }
     (void) make_move( side_to_move, game_move[i], TRUE );
     if ( side_to_move == WHITESQ )
