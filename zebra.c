@@ -787,7 +787,7 @@ play_game( const char *file_name,
 
   if ( move_file != NULL ) {
     char *newline_pos;
-
+    line_buffer[0] = 0;
     fgets( line_buffer, sizeof line_buffer, move_file );
     newline_pos = strchr( line_buffer, '\n' );
     if ( newline_pos != NULL )
