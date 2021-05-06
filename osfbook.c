@@ -1226,7 +1226,7 @@ nega_scout( int depth, int allow_mpc, int side_to_move,
   /* First determine the best move in the current position
      and its score when searched to depth DEPTH.
      This is done using standard negascout with iterative deepening. */
-
+  *best_index = 0; // in case the depth is 0, we have to initialize it somehow. Maybe random index would be better than 0.
   for ( curr_depth = 2 - (depth % 2); curr_depth <= depth; curr_depth += 2 ) {
     low_score = -INFINITE_EVAL;
     curr_alpha = -INFINITE_EVAL;
