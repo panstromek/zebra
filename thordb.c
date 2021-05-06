@@ -2031,7 +2031,7 @@ database_search( int *in_board,
 
   if ( thor_search.allocation == 0 ) {
     thor_search.match_list =
-      (GameType **) safe_malloc( thor_game_count * sizeof( GameType * ) );
+      (GameType **) safe_malloc( thor_game_count * sizeof( GameType * ) ); // TODO this memory is leaked somewhere
     thor_search.allocation = thor_game_count;
   }
   else if ( thor_search.allocation < thor_game_count) {
