@@ -2,17 +2,16 @@ name: CI
 
 on:
   push:
-    branches: [ master, c2rust ]
+    branches: [ master ]
   pull_request:
-    branches: [ master, c2rust ]
+    branches: [ master ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
       - name: Build
-        run: make -j $(nproc)
+        run: make all -j $(nproc)
