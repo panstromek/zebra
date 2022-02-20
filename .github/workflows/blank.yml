@@ -15,3 +15,6 @@ jobs:
 
       - name: Build
         run: make all -j $(nproc)
+
+      - name: Run a test game # Just run a simple zebra self-play as a sanity check
+        run: ./zebra -l 6 6 6 6 6 6
