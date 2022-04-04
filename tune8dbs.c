@@ -1146,7 +1146,7 @@ void pattern_setup( void ) {
   int pos;
   int pattern, mirror_pattern;
   int power3;
-  int flip8[6561], flip5[81], flip3[27];
+  int flip8[6561], flip5[243], flip3[27];
   int row[10];
 
   /* The inverse patterns */
@@ -1887,7 +1887,7 @@ int main(int argc, char *argv[]) {
     if ( USE_PARITY )
       parity.gradient = 0.0;
     if ( USE_A_FILE2X )
-      for ( i = 0; i < 59059; i++ )
+      for ( i = 0; i < 59049; i++ )
 	afile2x[i].gradient = 0.0;
     if ( USE_CORNER52 )
       for ( i = 0; i < 59049; i++ )
