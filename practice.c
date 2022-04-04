@@ -10,7 +10,7 @@
    Contents:     A small utility which enables the user to browse
                  an opening book file.
 */
-
+#include "wrap_time.h"
 
 #include <stdio.h>
 #include <stdlib.h>

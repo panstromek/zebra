@@ -109,7 +109,7 @@ TUNE8DBS_EXE	=	tune8dbs
 
 # --- Libraries
 
-LDFLAGS		= -static -lm -lz
+LDFLAGS		= -lm -lz -Wl,--wrap=time
 #LDFLAGS	= -static -lm -lz -Wl,-Map,map.out
 
 
@@ -125,7 +125,7 @@ CXX		= g++
 DEFS =		-DINCLUDE_BOOKTOOL -DTEXT_BASED -DZLIB_STATIC
 
 WARNINGS =	-Wall -Wcast-align -Wwrite-strings -Wstrict-prototypes -Winline
-OPTS =		-O4 -s -fomit-frame-pointer -falign-functions=32
+OPTS =		-O4 -g -fsanitize=address,undefined -static-libasan -fno-omit-frame-pointer
 #OPTS =		-O4 -s -fomit-frame-pointer -mtune=core2 -falign-functions=32
 
 CFLAGS =	$(OPTS) $(WARNINGS) $(DEFS)

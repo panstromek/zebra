@@ -10,6 +10,7 @@
    Contents:
 */
 
+#include "wrap_time.h"
 
 
 #include <assert.h>
